@@ -1,11 +1,11 @@
 class Api::CategoriesController < ApplicationController
-before_action :set_category, only: %i[show update destroy]
+before_action :set_category, only: [:show, :update, :destroy]
   def index
     render json: Category.all
   end
 
   def show
-    render json: @item
+    render json: @category
   end
 
   # error 444 represents error in creating a category
@@ -15,7 +15,7 @@ before_action :set_category, only: %i[show update destroy]
     if category.save
       render json: category
     else
-      render json: item.errors, status: 444
+      render json: category.errors, status: 444
     end
   end
 
@@ -25,7 +25,7 @@ before_action :set_category, only: %i[show update destroy]
     if category.save
       render json: category
     else
-      render json: item.errors, status: 445
+      render json: category.errors, status: 445
     end
   end
 
@@ -36,11 +36,10 @@ before_action :set_category, only: %i[show update destroy]
   private
 
   def category_params
-    params.require(:item).permit(:name, :complete)
+    params.require(:category).permit(:name)
   end
 
   def set_category
-    @category = Item.find(params[:id])
+    @category = Category.find(params[:id])
   end
-end
 end
