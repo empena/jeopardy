@@ -1,5 +1,5 @@
 import React from 'react';
-import card from '/components/card';
+import Cardshow from '/components/Cardshow';
 
 
 

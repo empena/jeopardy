@@ -1,7 +1,28 @@
 import React from 'react'
+import {Card, Button, } from 'semantic-ui-react';
 
-const Category = () => (
-  <div>this is the categories</div>
-)
+export default class Category extends React.Component {
 
-export default Category
+  state = { name:'' }
+
+
+  render () {
+    const { name } = this.state
+    return (
+      <>
+      <Button>Delete Category</Button>
+      <Button>Add Category</Button>
+      <Button>Update Category</Button>
+      <Card >
+        {/* { name.map( category => */}
+        <Card.Content>
+          <Card.Description>
+            {/* {category.name} */}
+          </Card.Description>
+        </Card.Content>
+        )}
+      </Card>
+    </>
+  )
+}
+}

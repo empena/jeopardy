@@ -1,15 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Category from './components/Category'
-import Card from './components/Card'
+import Cardshow from './components/Cardshow'
 
 function App() {
   return (
     <div className="App">
-      <div>This is where the game will be!!! Yay! </div>
+      <div>Jeopardy</div>
       <Category />
-      <Card />
+      <Cardshow />
     </div>
   );
 }
