@@ -1,7 +1,20 @@
-import React from 'react'
+import React from 'react';
+import {Card, Button, } from 'semantic-ui-react';
 
-const Card = () => (
-  <div>this is the cards</div>
-)
+const Card = () => {
+  return(
+    <Card key={card.id}>
+      <Card.Content>
+        <Card.Meta>
+          {card.name}
+        </Card.Meta>
+        <Card.Description>
+          {card.answers}
+        </Card.Description>
+      </Card.Content>
+      <Card.Button>Delete</Card.Button>
+    </Card>
+  )
+}
 
-export default Card
+export default Card;
